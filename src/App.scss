@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: #282c34;
+}
+
+.title {
+  $title: 'Gif-splosion!';
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  font-weight: 900;
+  font-size: 75px;
+  font-family: Catamaran, sans-serif;
+  font-style: italic;
+
+  // bottom-side of Title
+  &:after {
+    content: $title;
+    position: absolute;
+    left: 215px;
+    top: 1px;
+    color: white;
+    $path: polygon(0 25%, 100% 65%, 100% 100%, 0% 100%);
+    -webkit-clip-path: $path;
+    clip-path: $path;
+  }
+  
+  // top-side of Title
+  &:before {
+    content: $title;
+    position: absolute;
+    color: white;
+    $path: polygon(0 0, 110% 0, 100% 65%, 0 25%);
+    -webkit-clip-path: $path;
+    clip-path: $path;
+  }
+}
+
+
+.gif-grid {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0, .8);
+}
+
+.gif-button {
+  height: 50px;
+  width: 125px;
+  animation: gif-button 2.5s
+  linear;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+  border: 3pm solid #fff;
+  box-shadow: 1px 2px 0px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  color: #fff;
+  text-shadow: 0px 1px 0px rgba(0,0,0,0.25);
+  font-family: Oswald, sans-serif;
+}
+
+@keyframes gif-button{
+  100%, 0%{
+    background-color: red;
+  }
+  8%{
+    background-color: orange;
+  }
+  16%{
+    background-color: yellow;
+  }
+  25%{
+    background-color: yellowgreen;
+  }
+  33%{
+    background-color: rgb(0,255,0);
+  }
+  41%{
+    background-color: rgb(0,255,127);
+  }
+  50%{
+    background-color: cyan;
+  }
+  58%{
+    background-color: rgb(0,127,255);
+  }
+  66%{
+    background-color: violet;
+  }
+  75%{
+    background-color: blueviolet;
+  }
+  83%{
+    background-color: purple;
+  }
+  91%{
+    background-color: magenta;
+  }
+}
