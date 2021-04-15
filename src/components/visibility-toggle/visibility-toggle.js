@@ -2,9 +2,9 @@ import { useState } from 'react'
 
 // Create the Component visibility toggle:
 const VisibilityToggle = (component, visibility = false) => {
-  const [visible, setVisibility] = useState(() => visibility);
+  const [visiblity, setVisibility] = useState(() => visibility);
   return [
-    visible ? component : null,
+    visiblity ? component : null,
     () => setVisibility((canSee) => !canSee)
   ];
 }
