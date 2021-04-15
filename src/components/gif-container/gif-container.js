@@ -8,7 +8,7 @@ const giphyFetch = new GiphyFetch("oMVmOJUnfMVVgmRjBL1CfhYYBk9cxjMd");
 
 const GifContainer = ({ clickGif }) => {
   const fetchGifs = (offset) => 
-    giphyFetch.trending({ offset, limit: 10}); // Implicit return, no curly braces
+    giphyFetch.trending({ offset, limit: 10});
   
   const [width, setWidth] = useState(window.innerWidth);
   const [gifSize, setGifSize] = useState(3);
@@ -16,16 +16,15 @@ const GifContainer = ({ clickGif }) => {
   return (
     <>
     <div>
+      {/* Dropdown */}
       <select onChange={(e) => {
         const chosenSize = e.target.value;
         setGifSize(chosenSize);
-        // setWidth(chosenSize);
       }}>
        <option value={3}>Big</option> 
        <option value={5}>Medium</option> 
        <option value={7}>Small</option> 
       </select>
-      {console.log(gifSize)}
     </div>
    
       <Grid 
@@ -33,14 +32,13 @@ const GifContainer = ({ clickGif }) => {
         fetchGifs={fetchGifs}
         width={width}
         columns={gifSize}
-        gutter={7}
+        gutter={9}
       />
       <ResizeObserver 
-        onResize={({ width }) => {
+        onReflow={({ width }) => {
           setWidth(width);
         }}
       />
-      
     </>
   )
 }
