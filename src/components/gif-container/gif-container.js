@@ -3,6 +3,8 @@ import { GiphyFetch } from "@giphy/js-fetch-api";
 import { Grid } from "@giphy/react-components";
 import ResizeObserver from "react-resize-observer";
 
+import './gif-container.styles.scss'
+
 
 const giphyFetch = new GiphyFetch("oMVmOJUnfMVVgmRjBL1CfhYYBk9cxjMd");
 
@@ -17,10 +19,12 @@ const GifContainer = ({ clickGif }) => {
     <>
     <div>
       {/* Dropdown */}
+      <h5 className='label' id='gif-size'>GIF size:</h5>
       <select onChange={(e) => {
         const chosenSize = e.target.value;
         setGifSize(chosenSize);
       }}>
+        
        <option value={3}>Big</option> 
        <option value={5}>Medium</option> 
        <option value={7}>Small</option> 
