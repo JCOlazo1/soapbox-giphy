@@ -10,3 +10,6 @@ const VisibilityToggle = (component, visibility = false) => {
 }
 
 export default VisibilityToggle
+
+// Testing for VisibilityToggle could be done if I restructure my code..
+// The testing will now have to be done in 'App.js'
